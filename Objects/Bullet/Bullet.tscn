@@ -7,7 +7,7 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.20228, 0.203418, 0.196524 )
 
-[node name="Bullet" type="Area"]
+[node name="Bullet" type="Area" groups=["bullet"]]
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
