@@ -22,8 +22,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		var b = Bullet.instance()
 		owner.add_child(b)
-		b.transform = $BulletGenerator.global_transform
-		b.velocity = -b.transform.basis.z * b.muzzle_velocity
+		b.transform = $CollisionShape/Tank/BulletGenerator.global_transform
+		b.velocity = -b.global_transform.basis.z * b.muzzle_velocity
 	
 	var space_state = get_world().direct_space_state
 	var mouse_position = get_viewport().get_mouse_position()
@@ -32,7 +32,7 @@ func _physics_process(delta):
 	var intersection = space_state.intersect_ray(rayOrigin, rayEnd) # Set variable for cursor position
 	if not intersection.empty(): # Make sure there is a intersection with raycast
 		var pos = intersection.position
-		$Tank.look_at(Vector3(pos.x, pos.y, pos.z), Vector3(0,1,0))
+		$CollisionShape.look_at(Vector3(pos.x, pos.y, pos.z), Vector3(0,1,0))
 	
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()

@@ -9,20 +9,19 @@
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 1, 0, 0, 1 )
 
-[node name="PlayerTank" type="Spatial"]
-
-[node name="KinematicBody" type="KinematicBody" parent="."]
+[node name="PlayerTank" type="KinematicBody"]
 script = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-shape = SubResource( 1 )
-
-[node name="Camera" type="Camera" parent="KinematicBody"]
+[node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20.7405, -7.28392e-07 )
 
-[node name="Tank" type="MeshInstance" parent="KinematicBody"]
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Tank" type="MeshInstance" parent="CollisionShape"]
 mesh = SubResource( 2 )
+skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
 
-[node name="BulletGenerator" type="Position3D" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6976, 0.375606, 0.0906463 )
+[node name="BulletGenerator" type="Position3D" parent="CollisionShape/Tank"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0032903, 0.375606, -1.3599 )
