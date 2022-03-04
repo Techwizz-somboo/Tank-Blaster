@@ -1,5 +1,6 @@
 extends KinematicBody
 
+export (PackedScene) var Bullet = preload("res://Objects/Bullet/Bullet.tscn")
 onready var camera = get_node("Camera")
 var rayOrigin = Vector3()
 var rayEnd = Vector3()
@@ -18,6 +19,11 @@ func _physics_process(delta):
 		direction.z += 1
 	if Input.is_action_pressed("move_forward"):
 		direction.z -= 1
+	if Input.is_action_just_pressed("shoot"):
+		var b = Bullet.instance()
+		owner.add_child(b)
+		b.transform = $BulletGenerator.global_transform
+		b.velocity = -b.transform.basis.z * b.muzzle_velocity
 	
 	var space_state = get_world().direct_space_state
 	var mouse_position = get_viewport().get_mouse_position()

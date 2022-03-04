@@ -23,3 +23,6 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20.7
 [node name="Tank" type="MeshInstance" parent="KinematicBody"]
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
+
+[node name="BulletGenerator" type="Position3D" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6976, 0.375606, 0.0906463 )
