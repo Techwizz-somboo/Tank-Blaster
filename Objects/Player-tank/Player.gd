@@ -11,7 +11,6 @@ var velocity = Vector3.ZERO
 func _physics_process(delta):
 	Global.player = self # Makes the player variable in the global script equal to self
 	var direction = Vector3.ZERO
-	
 	### Input management
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
