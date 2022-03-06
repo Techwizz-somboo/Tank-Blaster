@@ -15,5 +15,5 @@ transform = Transform( 0.200224, 0, 0, 0, 0.200224, 0, 0, 0, 0.200224, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="CollisionShape" type="CollisionShape" parent="." groups=["bullet"]]
 shape = SubResource( 1 )

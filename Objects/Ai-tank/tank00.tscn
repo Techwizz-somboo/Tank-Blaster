@@ -12,10 +12,10 @@ albedo_color = Color( 1, 0, 0, 1 )
 [node name="AITank00" type="KinematicBody"]
 script = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="CollisionShape" type="CollisionShape" parent="." groups=["tank"]]
 shape = SubResource( 1 )
 
-[node name="Tank" type="MeshInstance" parent="CollisionShape"]
+[node name="Tank" type="MeshInstance" parent="CollisionShape" groups=["tank"]]
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
