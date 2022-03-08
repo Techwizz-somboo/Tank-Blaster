@@ -2,17 +2,20 @@ extends KinematicBody
 
 export (PackedScene) var Bullet = preload("res://Objects/Bullet/Bullet.tscn")
 var _bullettimer = null
+var bulletrandomnum = RandomNumberGenerator.new()
 var speed = 10
 var gravity = 100
 var velocity = Vector3.ZERO
 onready var player = get_node("/root/Spatial/PlayerTank")
+var bullettime = null
 
 func _ready():  ##For bullet timer
 	_bullettimer = Timer.new()
 	add_child(_bullettimer)
-	
+	bulletrandomnum.randomize()
+	bullettime = bulletrandomnum.randf_range(0.0, 5.0)
 	_bullettimer.connect("timeout", self, "_bullet_fire")
-	_bullettimer.set_wait_time(1.0)
+	_bullettimer.set_wait_time(bullettime)
 	_bullettimer.set_one_shot(false) # Make sure it loops
 	_bullettimer.start()
 
@@ -31,3 +34,7 @@ func _bullet_fire():
 		owner.add_child(b)
 		b.transform = $CollisionShape/Tank/BulletGenerator.global_transform
 		b.velocity = -b.global_transform.basis.z * b.muzzle_velocity
+		
+		bulletrandomnum.randomize()
+		bullettime = bulletrandomnum.randf_range(1.0, 5.0)
+		_bullettimer.set_wait_time(bullettime)
