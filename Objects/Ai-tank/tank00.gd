@@ -74,3 +74,5 @@ func _walk_towards_player_timer():
 	else:
 		if ablewalk == 0:
 			ablewalk = 1
+		else:
+			print("I guess randomized walking might have broke...")
