@@ -6,6 +6,7 @@ var rayOrigin = Vector3()
 var rayEnd = Vector3()
 var speed = 15
 var gravity = 100
+var angular_acceleration = 7 # How fast the player rotates
 var velocity = Vector3.ZERO
 
 func _physics_process(delta):
@@ -33,11 +34,13 @@ func _physics_process(delta):
 	var intersection = space_state.intersect_ray(rayOrigin, rayEnd) # Set variable for cursor position
 	if not intersection.empty(): # Make sure there is a intersection with raycast
 		var pos = intersection.position
-		$CollisionShapeTop.look_at(Vector3(pos.x, pos.y, pos.z), Vector3(0,1,0))
+		$CollisionShapeTop.look_at(Vector3(pos.x, $CollisionShapeTop.translation.y, pos.z), Vector3(0,1,0))
 	
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
 #		$Pivot.look_at(translation + direction, Vector3.UP)
+	
+	$CollisionShapeBottom.rotation.y = lerp_angle($CollisionShapeBottom.rotation.y, atan2(direction.x, direction.z), delta * angular_acceleration)
 	
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed

@@ -2,7 +2,7 @@ extends Area
 
 signal exploded
 
-export var muzzle_velocity = 25
+export var muzzle_velocity = 25 # How fast the bullets are
 export var g = Vector3.DOWN * 20
 
 var velocity = Vector3.ZERO
@@ -18,10 +18,12 @@ func _physics_process(delta):
 			print ("Found Player Tank")
 			self.queue_free()
 			body.queue_free()
-		if get_overlapping_bodies().has(get_parent().get_node("AITank00")):
-			print ("Found AI Tank")
-			self.queue_free()
-			body.queue_free()
+		else:
+			if get_overlapping_bodies():
+				if body.has_node("TankAI"):
+					print ("Found AI Tank")
+					self.queue_free()
+					body.queue_free()
 
 
 func _on_Shell_body_entered(body):

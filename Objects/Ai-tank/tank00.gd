@@ -16,6 +16,7 @@ var ablewalk = 0
 var speed = 10
 var gravity = 100
 var velocity = Vector3.ZERO
+var angular_acceleration = 7 # How fast the tank rotates
 onready var player = get_node("/root/Spatial/PlayerTank")
 
 func _ready():  
@@ -44,12 +45,13 @@ func _physics_process(delta):
 	if ablewalk == 0:
 		_walk_towards_player()
 	_look_at_player()
+	$CollisionShapeBottom.rotation.y = lerp_angle($CollisionShapeBottom.rotation.y, atan2(velocity.x, velocity.z), delta * angular_acceleration)
 
 func _bullet_fire():
 	if player != null:
 		var b = Bullet.instance()
 		owner.add_child(b)
-		b.transform = $CollisionShape/Tank/BulletGenerator.global_transform
+		b.transform = $CollisionShapeTop/Top_tank/BulletGenerator.global_transform
 		b.velocity = -b.global_transform.basis.z * b.muzzle_velocity
 		
 		bulletrandomnum.randomize()
@@ -63,7 +65,7 @@ func _walk_towards_player():
 
 func _look_at_player():
 	if player != null:
-		$CollisionShape.look_at(Vector3(player.global_transform.origin.x, global_transform.origin.y, player.global_transform.origin.z), Vector3(0,1,0)) # Look at player
+		$CollisionShapeTop.look_at(Vector3(player.global_transform.origin.x, global_transform.origin.y, player.global_transform.origin.z), Vector3(0,1,0)) # Look at player
 
 func _walk_towards_player_timer():
 	walkingrandomnum.randomize()
