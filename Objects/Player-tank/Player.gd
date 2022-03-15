@@ -26,6 +26,8 @@ func _physics_process(delta):
 		owner.add_child(b)
 		b.transform = $CollisionShapeTop/Top_tank/BulletGenerator.global_transform
 		b.velocity = -b.global_transform.basis.z * b.muzzle_velocity
+	if (Input.is_action_pressed("move_right") || Input.is_action_pressed("move_left") || Input.is_action_pressed("move_back") || Input.is_action_pressed("move_forward")):
+		$CollisionShapeBottom.rotation.y = lerp_angle($CollisionShapeBottom.rotation.y, atan2(direction.x, direction.z), delta * angular_acceleration)
 	
 	var space_state = get_world().direct_space_state
 	var mouse_position = get_viewport().get_mouse_position()
@@ -39,8 +41,6 @@ func _physics_process(delta):
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
 #		$Pivot.look_at(translation + direction, Vector3.UP)
-	
-	$CollisionShapeBottom.rotation.y = lerp_angle($CollisionShapeBottom.rotation.y, atan2(direction.x, direction.z), delta * angular_acceleration)
 	
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
