@@ -1,3 +1,4 @@
 extends Node
 
-var player
+var playerdead = 0
+var beforedeathscene

@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Tank Blaster"
-run/main_scene="res://Levels/Level01.tscn"
+run/main_scene="res://Levels/Main.tscn"
 boot_splash/image="res://2D Art/Splash Screen/Tank Blaster Splash.png"
 config/icon="res://icon.png"
 

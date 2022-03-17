@@ -18,6 +18,9 @@ func _physics_process(delta):
 			print ("Found Player Tank")
 			self.queue_free()
 			body.queue_free()
+			Global.playerdead = 1
+			Global.beforedeathscene = get_tree().current_scene.filename
+			get_tree().change_scene("res://Levels/Dead.tscn")
 		else:
 			if get_overlapping_bodies():
 				if body.has_node("TankAI"):

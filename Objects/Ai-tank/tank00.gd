@@ -42,7 +42,7 @@ func _ready():
 
 func _physics_process(delta):
 	velocity = Vector3.ZERO
-	if ablewalk == 0:
+	if ablewalk == 1:
 		_walk_towards_player()
 		$CollisionShapeBottom.rotation.y = lerp_angle($CollisionShapeBottom.rotation.y, atan2(velocity.x, velocity.z), delta * angular_acceleration)
 	_look_at_player()
@@ -60,12 +60,14 @@ func _bullet_fire():
 
 func _walk_towards_player():
 	if player != null: # Makes sure player is not an empty variable (not equal to nill/null)
-		velocity = (player.transform.origin - transform.origin).normalized() * speed # make velocity direction equal to player direction
+		if Global.playerdead == 0:
+			velocity = (player.transform.origin - transform.origin).normalized() * speed # make velocity direction equal to player direction
 	velocity = move_and_slide(velocity) # Move AI towards player
 
 func _look_at_player():
 	if player != null:
-		$CollisionShapeTop.look_at(Vector3(player.global_transform.origin.x, global_transform.origin.y, player.global_transform.origin.z), Vector3(0,1,0)) # Look at player
+		if Global.playerdead == 0:
+			$CollisionShapeTop.look_at(Vector3(player.global_transform.origin.x, global_transform.origin.y, player.global_transform.origin.z), Vector3(0,1,0)) # Look at player
 
 func _walk_towards_player_timer():
 	walkingrandomnum.randomize()
