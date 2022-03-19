@@ -1,14 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Menu.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Extrude.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://2D Art/Software Splashes/Godot.png" type="Texture" id=3]
+[ext_resource path="res://2D Art/Software Splashes/Blender.png" type="Texture" id=4]
+[ext_resource path="res://2D Art/Software Splashes/Maya.png" type="Texture" id=5]
+[ext_resource path="res://2D Art/Software Splashes/skillsUSA.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 2 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -20,9 +26,6 @@ margin_top = -34.0
 margin_right = 32.0
 margin_bottom = 34.0
 rect_scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 margin_right = 63.0
@@ -40,6 +43,40 @@ margin_top = 48.0
 margin_right = 63.0
 margin_bottom = 68.0
 text = "Quit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -671.0
+margin_top = 150.0
+margin_right = 671.0
+margin_bottom = 350.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+margin_right = 1342.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 1 )
+text = "Tank Blaster"
+
+[node name="Godot" type="Sprite" parent="."]
+position = Vector2( 978, 948 )
+scale = Vector2( 0.139387, 0.139387 )
+texture = ExtResource( 3 )
+
+[node name="Blender" type="Sprite" parent="."]
+position = Vector2( 345, 953 )
+scale = Vector2( 0.186171, 0.186171 )
+texture = ExtResource( 4 )
+
+[node name="Maya" type="Sprite" parent="."]
+position = Vector2( 1621, 959 )
+scale = Vector2( 0.230098, 0.230098 )
+texture = ExtResource( 5 )
+
+[node name="SkillsUsa" type="Sprite" parent="."]
+position = Vector2( 1497, 559 )
+scale = Vector2( 0.36747, 0.36747 )
+texture = ExtResource( 6 )
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
