@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Levels/Level01.tscn")
+	get_tree().change_scene("res://Levels/Notice.tscn")
 
 func _on_OptionsButton_pressed():
 	get_tree().change_scene("res://Levels/Options.tscn")

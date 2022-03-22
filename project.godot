@@ -36,6 +36,10 @@ window/size/height=1080
 window/size/fullscreen=true
 mouse_cursor/custom_image="res://2D Art/Cursor/Cursor.png"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/mixing-desk/plugin.cfg" )
+
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]

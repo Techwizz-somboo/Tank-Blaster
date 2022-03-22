@@ -27,6 +27,9 @@ func _physics_process(delta):
 					print ("Found AI Tank")
 					self.queue_free()
 					body.queue_free()
+				else:
+						print ("Bullet Collided with something else")
+						self.queue_free()
 
 
 func _on_Shell_body_entered(body):

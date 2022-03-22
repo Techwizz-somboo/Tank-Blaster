@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/Menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Extrude.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,16 @@
 [ext_resource path="res://2D Art/Software Splashes/Blender.png" type="Texture" id=4]
 [ext_resource path="res://2D Art/Software Splashes/Maya.png" type="Texture" id=5]
 [ext_resource path="res://2D Art/Software Splashes/skillsUSA.png" type="Texture" id=6]
+[ext_resource path="res://fonts/Born2bSportyV2.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 200
@@ -29,19 +39,22 @@ rect_scale = Vector2( 2, 2 )
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 margin_right = 63.0
-margin_bottom = 20.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 2 )
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
+margin_top = 26.0
 margin_right = 63.0
-margin_bottom = 44.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 3 )
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
+margin_top = 52.0
 margin_right = 63.0
-margin_bottom = 68.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 4 )
 text = "Quit"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
