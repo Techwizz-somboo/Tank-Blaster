@@ -56,9 +56,9 @@ script = ExtResource( 2 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -755.0
-margin_top = 77.0
+margin_top = 37.0
 margin_right = 755.0
-margin_bottom = 184.0
+margin_bottom = 248.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 1510.0
@@ -78,9 +78,9 @@ align = 1
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -230.0
-margin_top = 416.0
+margin_top = 384.0
 margin_right = 230.0
-margin_bottom = 884.0
+margin_bottom = 852.0
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
 margin_right = 460.0
