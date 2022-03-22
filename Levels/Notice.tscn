@@ -83,15 +83,15 @@ margin_right = 230.0
 margin_bottom = 852.0
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
-margin_right = 460.0
+margin_right = 473.0
 margin_bottom = 72.0
 custom_fonts/font = SubResource( 3 )
-text = "Planned Features"
+text = "Planned Features:"
 align = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer2"]
 margin_top = 76.0
-margin_right = 460.0
+margin_right = 473.0
 margin_bottom = 136.0
 custom_fonts/font = SubResource( 4 )
 text = "- More levels"
@@ -99,7 +99,7 @@ align = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer2"]
 margin_top = 140.0
-margin_right = 460.0
+margin_right = 473.0
 margin_bottom = 200.0
 custom_fonts/font = SubResource( 5 )
 text = "- Multiplayer"
@@ -107,7 +107,7 @@ align = 1
 
 [node name="Label4" type="Label" parent="VBoxContainer2"]
 margin_top = 204.0
-margin_right = 460.0
+margin_right = 473.0
 margin_bottom = 264.0
 custom_fonts/font = SubResource( 6 )
 text = "- Health system"
@@ -115,7 +115,7 @@ align = 1
 
 [node name="Label5" type="Label" parent="VBoxContainer2"]
 margin_top = 268.0
-margin_right = 460.0
+margin_right = 473.0
 margin_bottom = 328.0
 custom_fonts/font = SubResource( 7 )
 text = "- Health bar"
@@ -123,7 +123,7 @@ align = 1
 
 [node name="Label6" type="Label" parent="VBoxContainer2"]
 margin_top = 332.0
-margin_right = 460.0
+margin_right = 473.0
 margin_bottom = 392.0
 custom_fonts/font = SubResource( 8 )
 text = "- Bosses"
@@ -131,7 +131,7 @@ align = 1
 
 [node name="Label7" type="Label" parent="VBoxContainer2"]
 margin_top = 396.0
-margin_right = 460.0
+margin_right = 473.0
 margin_bottom = 468.0
 custom_fonts/font = SubResource( 9 )
 text = "And much more!"
