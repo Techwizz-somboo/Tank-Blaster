@@ -46,6 +46,7 @@ func _physics_process(delta):
 		_walk_towards_player()
 		$CollisionShapeBottom.rotation.y = lerp_angle($CollisionShapeBottom.rotation.y, atan2(velocity.x, velocity.z), delta * angular_acceleration)
 	_look_at_player()
+	velocity.y -= gravity * delta
 
 func _bullet_fire():
 	if player != null:
