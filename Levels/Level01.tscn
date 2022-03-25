@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objects/Player-tank/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Ai-tank/tank00.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/tutorial_level.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/tutorial-map/Tutorial_map.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/Born2bSportyV2.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Levels/Score.gd" type="Script" id=5]
+[ext_resource path="res://Audio/Tutorial_backround.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/Music.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 4 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -10,7 +18,54 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.0774, 1.4303, -13.8074 )
 
 [node name="AITank00" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2314, 1.17676, 14.9248 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5527, 1.17676, 22.8045 )
 
-[node name="tutorial_level" parent="." instance=ExtResource( 3 )]
-transform = Transform( 16.4397, 0, 0, 0, 16.4397, 0, 0, 0, 16.4397, 0.957769, 0.0361147, -1.97334 )
+[node name="Tutorial" parent="." instance=ExtResource( 3 )]
+transform = Transform( 15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0 )
+
+[node name="AITank01" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.254, 1.1, 73.273 )
+
+[node name="AITank02" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.089, 1.1, 140.117 )
+
+[node name="AITank03" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -147.956, 1.1, 91.761 )
+
+[node name="AITank04" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -186.839, 1.1, -51.276 )
+
+[node name="AITank05" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -155.084, 1.1, -145.988 )
+
+[node name="AITank06" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.318, 1.1, -172.559 )
+
+[node name="AITank07" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 95.38, 1.1, -176.543 )
+
+[node name="AITank08" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.816, 1.1, -24.366 )
+
+[node name="AITank09" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 105.931, 1.1, 127.108 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -88.0
+margin_top = 2.0
+margin_right = 42.0
+margin_bottom = 62.0
+script = ExtResource( 5 )
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+margin_right = 130.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+script = ExtResource( 7 )

@@ -20,7 +20,10 @@ func _physics_process(delta):
 		direction.z += 1
 	if Input.is_action_pressed("move_forward"):
 		direction.z -= 1
+	if Input.is_action_pressed("open_menu"):
+		get_tree().change_scene("res://Levels/Main.tscn")
 	if Input.is_action_just_pressed("shoot"):
+		$AudioStreamPlayer3D.play()
 		var b = Bullet.instance()
 		owner.add_child(b)
 		b.transform = $CollisionShapeTop/Top_tank/BulletGenerator.global_transform

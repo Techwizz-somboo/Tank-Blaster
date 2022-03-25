@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Tutorial_blender.glb-07c903559ca440771ccbada1ffa5c8db.scn"
+path="res://.import/Tutorial_blender.glb-ecbae29ac3c39b94da1aca6ec2453b0d.scn"
 
 [deps]
 
-source_file="res://Objects/Tutorial-map/Tutorial_blender.glb"
-dest_files=[ "res://.import/Tutorial_blender.glb-07c903559ca440771ccbada1ffa5c8db.scn" ]
+source_file="res://Objects/tutorial-map/Tutorial_blender.glb"
+dest_files=[ "res://.import/Tutorial_blender.glb-ecbae29ac3c39b94da1aca6ec2453b0d.scn" ]
 
 [params]
 

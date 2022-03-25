@@ -49,6 +49,7 @@ func _physics_process(delta):
 
 func _bullet_fire():
 	if player != null:
+		$AudioStreamPlayer3D.play()
 		var b = Bullet.instance()
 		owner.add_child(b)
 		b.transform = $CollisionShapeTop/Top_tank/BulletGenerator.global_transform

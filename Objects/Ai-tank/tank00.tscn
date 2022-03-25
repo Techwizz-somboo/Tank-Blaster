@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/Ai-tank/tank00.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player-tank/model/Bottom_tank.dae" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Player-tank/model/Top_tank.dae" type="PackedScene" id=3]
+[ext_resource path="res://Audio/TANK_Shoot_07_mono.wav" type="AudioStream" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.29, 1, 2.428 )
@@ -29,3 +30,7 @@ transform = Transform( -1.44248e-06, 0, 33, 0, 33, 0, -33, 0, -1.44248e-06, 0, -
 transform = Transform( -1.32459e-09, 0, -0.030303, 0, 0.030303, 0, 0.030303, 0, -1.32459e-09, 0.124162, 0.0831104, -9.97006e-05 )
 
 [node name="TankAI" type="Node" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+unit_size = 20.0

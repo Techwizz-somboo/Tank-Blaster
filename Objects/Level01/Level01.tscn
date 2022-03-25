@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Objects/Level01/level_1.glb" type="PackedScene" id=1]
+
+[node name="Level01" type="Spatial"]
+
+[node name="level_1" parent="." instance=ExtResource( 1 )]

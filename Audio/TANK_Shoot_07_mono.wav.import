@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TANK_Shoot_07_mono.wav-4a291d75dd1f930e657fa4b46bbf0cff.sample"
+
+[deps]
+
+source_file="res://Audio/TANK_Shoot_07_mono.wav"
+dest_files=[ "res://.import/TANK_Shoot_07_mono.wav-4a291d75dd1f930e657fa4b46bbf0cff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
