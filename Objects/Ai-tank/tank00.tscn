@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/Ai-tank/tank00.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Player-tank/model/Bottom_tank.dae" type="PackedScene" id=2]
-[ext_resource path="res://Objects/Player-tank/model/Top_tank.dae" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Ai-tank/model/Bottom_tank_blender_enemy.glb" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Ai-tank/model/tank_top_blender_enemy.glb" type="PackedScene" id=3]
 [ext_resource path="res://Audio/TANK_Shoot_07_mono.wav" type="AudioStream" id=4]
 
 [sub_resource type="BoxShape" id=1]
@@ -17,17 +17,17 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Bottom_tank" parent="CollisionShapeBottom" instance=ExtResource( 2 )]
-transform = Transform( -1.44248e-06, 0, 33, 0, 33, 0, -33, 0, -1.44248e-06, 0, -1.90625, 0 )
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, -0.366518, 0.2957 )
 
 [node name="CollisionShapeTop" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.572825, 0 )
 shape = SubResource( 2 )
 
 [node name="Top_tank" parent="CollisionShapeTop" instance=ExtResource( 3 )]
-transform = Transform( -1.44248e-06, 0, 33, 0, 33, 0, -33, 0, -1.44248e-06, 0, -2.74403, 0 )
+transform = Transform( -3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 0, 0.00615245, -0.303923 )
 
 [node name="BulletGenerator" type="Position3D" parent="CollisionShapeTop/Top_tank"]
-transform = Transform( -1.32459e-09, 0, -0.030303, 0, 0.030303, 0, 0.030303, 0, -1.32459e-09, 0.124162, 0.0831104, -9.97006e-05 )
+transform = Transform( -6.24448e-08, 0, -1.42857, 0, 1.42857, 0, 1.42857, 0, -6.24448e-08, 5.41918, -0.236235, -0.00470019 )
 
 [node name="TankAI" type="Node" parent="."]
 

@@ -38,7 +38,7 @@ mouse_cursor/custom_image="res://2D Art/Cursor/Cursor.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/blender_importer/plugin.cfg", "res://addons/mixing-desk/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/blender_importer/plugin.cfg" )
 
 [gdnative]
 
