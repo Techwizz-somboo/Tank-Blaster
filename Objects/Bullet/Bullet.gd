@@ -28,6 +28,7 @@ func _physics_process(delta):
 					Global.tankskilled = Global.tankskilled + 1
 					if (Global.tankskilled == 10):
 						if (Global.firstlevelcompleted == 0):
+							Global.firstlevelcompleted = 1
 							get_tree().change_scene("res://Levels/Level02.tscn")
 						else:
 							if (Global.firstlevelcompleted == 1):
