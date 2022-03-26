@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Player-tank/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Ai-tank/tank00.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [sub_resource type="DynamicFont" id=1]
 size = 60
 font_data = ExtResource( 4 )
+
+[sub_resource type="Environment" id=2]
+ambient_light_color = Color( 1, 1, 1, 1 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -69,3 +72,6 @@ text = "0"
 stream = ExtResource( 6 )
 autoplay = true
 script = ExtResource( 7 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
