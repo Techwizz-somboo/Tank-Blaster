@@ -1,107 +1,87 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://ddd3ixulkkjx0"]
 
-[ext_resource path="res://Levels/Menu.gd" type="Script" id=1]
-[ext_resource path="res://fonts/Extrude.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://2D Art/Software Splashes/Godot.png" type="Texture" id=3]
-[ext_resource path="res://2D Art/Software Splashes/Blender.png" type="Texture" id=4]
-[ext_resource path="res://2D Art/Software Splashes/Maya.png" type="Texture" id=5]
-[ext_resource path="res://2D Art/Software Splashes/skillsUSA.png" type="Texture" id=6]
-[ext_resource path="res://fonts/Born2bSportyV2.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Audio/menu_music.wav" type="AudioStream" id=8]
-[ext_resource path="res://Audio/Music.gd" type="Script" id=9]
-[ext_resource path="res://2D Art/Splash Screen/Menu_screen.jpg" type="Texture" id=10]
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=1]
-size = 200
-font_data = ExtResource( 2 )
+[ext_resource type="Script" path="res://Levels/Menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cayedfxbpdm7g" path="res://2D Art/Software Splashes/Godot.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dq7au3dl4f4p6" path="res://2D Art/Software Splashes/Blender.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bbdmaulicfr8u" path="res://2D Art/Software Splashes/Maya.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://w4ndw8ieyn6t" path="res://2D Art/Software Splashes/skillsUSA.png" id="6"]
+[ext_resource type="AudioStream" uid="uid://d0jqj03xx80m5" path="res://Audio/menu_music.wav" id="8"]
+[ext_resource type="Script" path="res://Audio/Music.gd" id="9"]
+[ext_resource type="Texture2D" uid="uid://cywkoruro2tty" path="res://2D Art/Splash Screen/Menu_screen.jpg" id="10"]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource( "1" )
 
-[node name="MenuScreen" type="Sprite" parent="."]
-position = Vector2( 960, 540 )
-texture = ExtResource( 10 )
+[node name="MenuScreen" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource( "10" )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -31.0
-margin_top = -34.0
-margin_right = 32.0
-margin_bottom = 34.0
-rect_scale = Vector2( 2, 2 )
+offset_left = -31.0
+offset_top = -34.0
+offset_right = 32.0
+offset_bottom = 34.0
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
-margin_right = 63.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 2 )
+offset_right = 70.0
+offset_bottom = 31.0
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
-margin_top = 26.0
-margin_right = 63.0
-margin_bottom = 48.0
-custom_fonts/font = SubResource( 3 )
+offset_top = 35.0
+offset_right = 70.0
+offset_bottom = 66.0
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
-margin_top = 52.0
-margin_right = 63.0
-margin_bottom = 74.0
-custom_fonts/font = SubResource( 4 )
+offset_top = 70.0
+offset_right = 70.0
+offset_bottom = 101.0
 text = "Quit"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -671.0
-margin_top = 54.0
-margin_right = 671.0
-margin_bottom = 254.0
+offset_left = -671.0
+offset_top = 54.0
+offset_right = 671.0
+offset_bottom = 254.0
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
-margin_right = 1342.0
-margin_bottom = 200.0
-custom_fonts/font = SubResource( 1 )
+offset_right = 1342.0
+offset_bottom = 26.0
 text = "Tank Blaster"
 
-[node name="Godot" type="Sprite" parent="."]
-position = Vector2( 978, 948 )
-scale = Vector2( 0.139387, 0.139387 )
-texture = ExtResource( 3 )
+[node name="Godot" type="Sprite2D" parent="."]
+position = Vector2(978, 948)
+scale = Vector2(0.139387, 0.139387)
+texture = ExtResource( "3" )
 
-[node name="Blender" type="Sprite" parent="."]
-position = Vector2( 345, 953 )
-scale = Vector2( 0.186171, 0.186171 )
-texture = ExtResource( 4 )
+[node name="Blender" type="Sprite2D" parent="."]
+position = Vector2(345, 953)
+scale = Vector2(0.186171, 0.186171)
+texture = ExtResource( "4" )
 
-[node name="Maya" type="Sprite" parent="."]
-position = Vector2( 1621, 959 )
-scale = Vector2( 0.230098, 0.230098 )
-texture = ExtResource( 5 )
+[node name="Maya" type="Sprite2D" parent="."]
+position = Vector2(1621, 959)
+scale = Vector2(0.230098, 0.230098)
+texture = ExtResource( "5" )
 
-[node name="SkillsUsa" type="Sprite" parent="."]
-position = Vector2( 1497, 559 )
-scale = Vector2( 0.36747, 0.36747 )
-texture = ExtResource( 6 )
+[node name="SkillsUsa" type="Sprite2D" parent="."]
+position = Vector2(1497, 559)
+scale = Vector2(0.36747, 0.36747)
+texture = ExtResource( "6" )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( "8" )
 autoplay = true
-script = ExtResource( 9 )
+script = ExtResource( "9" )
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]

@@ -2,12 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Tutorial_backround.wav-555f0d3839b4fb1bfa961fcabb4b35c2.sample"
+uid="uid://bntnljfaw5ifv"
+path="res://.godot/imported/Tutorial_backround.wav-555f0d3839b4fb1bfa961fcabb4b35c2.sample"
 
 [deps]
 
 source_file="res://Audio/Tutorial_backround.wav"
-dest_files=[ "res://.import/Tutorial_backround.wav-555f0d3839b4fb1bfa961fcabb4b35c2.sample" ]
+dest_files=["res://.godot/imported/Tutorial_backround.wav-555f0d3839b4fb1bfa961fcabb4b35c2.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

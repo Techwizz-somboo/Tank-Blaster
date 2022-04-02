@@ -3,10 +3,10 @@ extends Node2D
 var dvols = []
 var dpitches = []
 var root
-export(NodePath) var spawn_node
-export var autoplay : bool
-export var volume_range : float
-export var pitch_range : float
+@export var spawn_node: NodePath
+@export var autoplay : bool
+@export var volume_range : float
+@export var pitch_range : float
 
 func _ready():
 	for i in get_children():
@@ -53,4 +53,4 @@ func _randomise(sound):
 	sound.pitch_scale = newpitch
 	
 func _range(item : float) -> float:
-	return rand_range(-item,item)
+	return randf_range(-item,item)

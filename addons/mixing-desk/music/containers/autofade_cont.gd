@@ -2,26 +2,26 @@ extends Node
 
 var cont = "autofade"
 enum play_type {random, all}
-export(play_type) var play_style
-export var toggle : bool = false
-export(NodePath) var target_node
-export(String) var target_property
-export(float) var min_range = 0.0
-export(float) var max_range = 1.0
-export(bool) var invert
-export(float, 0.0, 1.0) var track_speed
+@export var play_style: play_type
+@export var toggle : bool = false
+@export var target_node: NodePath
+@export var target_property: String
+@export var min_range: float = 0.0
+@export var max_range: float = 1.0
+@export var invert: bool
+@export var track_speed: float, 0.0, 1.0
 
 var param
 var target
 
 func _ready():
-	get_node("../..").connect("beat", self, "_update")
+	get_node(^"../..").connect(&"beat", self._update)
 	target = get_node(target_node)
 	init_volume()
 
 func _update(beat):
 	param = target.get(target_property)
-	if !toggle:
+	if not toggle:
 		var vol := _get_range_vol()
 		for i in get_children():
 			_fade_to(i, vol)
@@ -34,7 +34,7 @@ func _update(beat):
 				
 func init_volume():
 	param = target.get(target_property)
-	if !toggle:
+	if not toggle:
 		var vol := _get_range_vol()
 		for i in get_children():
 			i.volume_db = vol
@@ -47,7 +47,7 @@ func init_volume():
 
 func _get_range_vol() -> float:
 	var vol: float = param
-	if !invert:
+	if not invert:
 		vol -= min_range
 	else:
 		vol *= -1
@@ -65,7 +65,7 @@ func _fade_to(target, vol):
 	var is_match
 	var cvol = target.volume_db
 	is_match = is_equal(cvol,vol)
-	if !is_match:
+	if not is_match:
 		if cvol > vol:
 			if track_speed < 1.0:
 				cvol -= 1.5 / (1.0 - track_speed )

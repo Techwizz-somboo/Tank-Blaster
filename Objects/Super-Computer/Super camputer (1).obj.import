@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/Super camputer (1).obj-7fec69c91ea9a4a201a6beba93a095f8.mesh"
+path="res://.godot/imported/Super camputer (1).obj-7fec69c91ea9a4a201a6beba93a095f8.mesh"
 
 [deps]
 
-files=[ "res://.import/Super camputer (1).obj-7fec69c91ea9a4a201a6beba93a095f8.mesh" ]
+files=["res://.godot/imported/Super camputer (1).obj-7fec69c91ea9a4a201a6beba93a095f8.mesh"]
 
 source_file="res://Objects/Super-Computer/Super camputer (1).obj"
-dest_files=[ "res://.import/Super camputer (1).obj-7fec69c91ea9a4a201a6beba93a095f8.mesh", "res://.import/Super camputer (1).obj-7fec69c91ea9a4a201a6beba93a095f8.mesh" ]
+dest_files=["res://.godot/imported/Super camputer (1).obj-7fec69c91ea9a4a201a6beba93a095f8.mesh", "res://.godot/imported/Super camputer (1).obj-7fec69c91ea9a4a201a6beba93a095f8.mesh"]
 
 [params]
 

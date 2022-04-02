@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://fonts/Born2bSportyV2.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Born2bSportyV2.ttf" type="FontData" id=1]
 [ext_resource path="res://Levels/win-01.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="Font" id=1]
 size = 80
 font_data = ExtResource( 1 )
 
@@ -17,37 +17,37 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -802.5
-margin_top = -166.0
-margin_right = 802.5
-margin_bottom = 166.0
+offset_left = -802.5
+offset_top = -166.0
+offset_right = 802.5
+offset_bottom = 166.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 1605.0
-margin_bottom = 80.0
+offset_right = 1605.0
+offset_bottom = 80.0
 custom_fonts/font = SubResource( 1 )
 text = "You won level 1! You might think you are skillful now..."
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
-margin_top = 84.0
-margin_right = 1605.0
-margin_bottom = 164.0
+offset_top = 84.0
+offset_right = 1605.0
+offset_bottom = 164.0
 custom_fonts/font = SubResource( 1 )
 text = "You still have a long road ahead."
 align = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
-margin_top = 168.0
-margin_right = 1605.0
-margin_bottom = 248.0
+offset_top = 168.0
+offset_right = 1605.0
+offset_bottom = 248.0
 custom_fonts/font = SubResource( 1 )
 text = "Get excited for your next challenge young one."
 align = 1
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
-margin_top = 252.0
-margin_right = 1605.0
-margin_bottom = 332.0
+offset_top = 252.0
+offset_right = 1605.0
+offset_bottom = 332.0
 custom_fonts/font = SubResource( 1 )
 text = "Press enter to see what's in store for your future!"
 align = 1

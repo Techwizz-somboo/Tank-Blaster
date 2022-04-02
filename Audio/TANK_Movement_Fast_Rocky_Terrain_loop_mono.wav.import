@@ -2,12 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/TANK_Movement_Fast_Rocky_Terrain_loop_mono.wav-ce16d83ac9d4021f0752cbc72113fc15.sample"
+uid="uid://dst73026l7vvf"
+path="res://.godot/imported/TANK_Movement_Fast_Rocky_Terrain_loop_mono.wav-ce16d83ac9d4021f0752cbc72113fc15.sample"
 
 [deps]
 
 source_file="res://Audio/TANK_Movement_Fast_Rocky_Terrain_loop_mono.wav"
-dest_files=[ "res://.import/TANK_Movement_Fast_Rocky_Terrain_loop_mono.wav-ce16d83ac9d4021f0752cbc72113fc15.sample" ]
+dest_files=["res://.godot/imported/TANK_Movement_Fast_Rocky_Terrain_loop_mono.wav-ce16d83ac9d4021f0752cbc72113fc15.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

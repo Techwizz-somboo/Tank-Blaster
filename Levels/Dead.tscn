@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://fonts/Born2bSportyV2.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Born2bSportyV2.ttf" type="FontData" id=1]
 [ext_resource path="res://Levels/Dead.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="Font" id=1]
 size = 144
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="Font" id=2]
 size = 92
 font_data = ExtResource( 1 )
 
@@ -20,27 +20,27 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-modulate = Color( 0.329412, 0.0470588, 0.0470588, 1 )
+modulate = Color(0.329412, 0.0470588, 0.0470588, 1)
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -499.5
-margin_top = -72.0
-margin_right = 499.5
-margin_bottom = 72.0
+offset_left = -499.5
+offset_top = -72.0
+offset_right = 499.5
+offset_bottom = 72.0
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
-margin_right = 999.0
-margin_bottom = 144.0
+offset_right = 999.0
+offset_bottom = 144.0
 
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
-margin_right = 999.0
-margin_bottom = 144.0
+offset_right = 999.0
+offset_bottom = 144.0
 custom_fonts/font = SubResource( 1 )
 text = "You be dead bro :("
 
@@ -49,10 +49,10 @@ anchor_left = 0.5
 anchor_top = 0.665
 anchor_right = 0.5
 anchor_bottom = 0.682
-margin_left = -231.5
-margin_top = -66.0
-margin_right = 231.5
-margin_bottom = 66.0
+offset_left = -231.5
+offset_top = -66.0
+offset_right = 231.5
+offset_bottom = 66.0
 custom_fonts/font = SubResource( 2 )
 text = "Retry Level"
 __meta__ = {
@@ -64,10 +64,10 @@ anchor_left = 0.5
 anchor_top = 0.801
 anchor_right = 0.5
 anchor_bottom = 0.823
-margin_left = -231.5
-margin_top = -32.0106
-margin_right = 231.5
-margin_bottom = 99.9894
+offset_left = -231.5
+offset_top = -32.0106
+offset_right = 231.5
+offset_bottom = 99.9894
 custom_fonts/font = SubResource( 2 )
 text = "Menu"
 __meta__ = {

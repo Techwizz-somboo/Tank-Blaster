@@ -10,16 +10,16 @@ var concats : Array
 var playing = false
 
 #external properties
-export(int) var tempo
-export(int) var bars
-export(int) var beats_in_bar
-export(float) var transition_beats
-export(bool) var ignore = false
-export(bool) var auto_transition
-export(NodePath) var auto_signal_node
-export(String) var auto_signal
-export(String, "Beat", "Bar") var transition_type
-export(String) var bus = "Music"
+@export var tempo: int
+@export var bars: int
+@export var beats_in_bar: int
+@export var transition_beats: float
+@export var ignore: bool = false
+@export var auto_transition: bool
+@export var auto_signal_node: NodePath
+@export var auto_signal: String
+@export var transition_type: String, "Beat", "Bar"
+@export var bus: String = "Music"
 
 func _ready():
 	if auto_transition:

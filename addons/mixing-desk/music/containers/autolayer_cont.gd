@@ -1,17 +1,17 @@
 extends Node
 
 enum play_mode {additive, single, pad}
-export(play_mode) var play_style
-export(int) var layer_min
-export(int) var layer_max
-export(bool) var automate = false
-export(NodePath) var target_node
-export(String) var target_property
-export(float) var min_range = 0.0
-export(float) var max_range = 1.0
-export(int) var pad = 0
-export(bool) var invert
-export(float) var track_speed
+@export var play_style: play_mode
+@export var layer_min: int
+@export var layer_max: int
+@export var automate: bool = false
+@export var target_node: NodePath
+@export var target_property: String
+@export var min_range: float = 0.0
+@export var max_range: float = 1.0
+@export var pad: int = 0
+@export var invert: bool
+@export var track_speed: float
 
 var target
 var num = 0.0
@@ -19,7 +19,7 @@ var t_layer
 var cont = "autolayer"
 
 func _ready():
-	get_node("../..").connect("beat", self, "_update")
+	get_node(^"../..").connect(&"beat", self._update)
 	target = get_node(target_node)
 	init_layers()
 	
@@ -41,7 +41,7 @@ func _set_layers_values():
 	t_layer = layer_max
 	if automate:
 		num = target.get(target_property)
-		if !invert:
+		if not invert:
 			num -= min_range
 		else:
 			num *= -1
@@ -78,7 +78,7 @@ func _fade_to(target, vol):
 	var cvol = target.volume_db
 	var sum = vol - cvol
 	is_match = is_equal(vol,cvol)
-	if !is_match:
+	if not is_match:
 		if cvol > vol:
 			if track_speed < 1.0:
 				cvol -= 1.5 / (1.0 - track_speed )

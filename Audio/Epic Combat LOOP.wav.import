@@ -2,12 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Epic Combat LOOP.wav-85a10bc3e2798a3ab999c8f986095a53.sample"
+uid="uid://dgbpqyit4kam4"
+path="res://.godot/imported/Epic Combat LOOP.wav-85a10bc3e2798a3ab999c8f986095a53.sample"
 
 [deps]
 
 source_file="res://Audio/Epic Combat LOOP.wav"
-dest_files=[ "res://.import/Epic Combat LOOP.wav-85a10bc3e2798a3ab999c8f986095a53.sample" ]
+dest_files=["res://.godot/imported/Epic Combat LOOP.wav-85a10bc3e2798a3ab999c8f986095a53.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

@@ -3,10 +3,10 @@ extends Node
 var dvols = []
 var dpitches = []
 var root
-export(NodePath) var spawn_node
-export var autoplay : bool
-export var volume_range : float
-export var pitch_range : float
+@export var spawn_node: NodePath
+@export var autoplay : bool
+@export var volume_range : float
+@export var pitch_range : float
 
 func _ready():
 	for i in get_children():
@@ -45,7 +45,7 @@ func play(ran=true):
 func _randomise_pitch_and_vol(sound):
 	var dvol = sound.get_parent().dvols[sound.get_index()]
 	var dpitch = sound.get_parent().dpitches[sound.get_index()]
-	var newvol = (dvol + rand_range(-volume_range,volume_range))
-	var newpitch = (dpitch + rand_range(-pitch_range,pitch_range))
+	var newvol = (dvol + randf_range(-volume_range,volume_range))
+	var newpitch = (dpitch + randf_range(-pitch_range,pitch_range))
 	sound.volume_db = newvol
 	sound.pitch_scale = newpitch

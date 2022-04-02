@@ -4,11 +4,11 @@ var dvols = []
 var dpitches = []
 var soundlist = []
 var root
-export(NodePath) var spawn_node
-export var autoplay : bool
-export var volume_range : float
-export var pitch_range : float
-export var sound_number : int
+@export var spawn_node: NodePath
+@export var autoplay : bool
+@export var volume_range : float
+@export var pitch_range : float
+@export var sound_number : int
 
 func _ready():
 	for i in get_children():
@@ -45,7 +45,7 @@ func play(num=0):
 	for i in range(0, num):
 		var ransnd = _get_ransnd()
 		ransnd.play()
-		yield(ransnd, "finished")
+		await ransnd.finished
 		
 func _get_ransnd(ran=true):
 	var chance = randi() % soundlist.size()
@@ -57,7 +57,7 @@ func _get_ransnd(ran=true):
 func _randomise_pitch_and_vol(sound):
 	var dvol = sound.get_parent().dvols[sound.get_index()]
 	var dpitch = sound.get_parent().dpitches[sound.get_index()]
-	var newvol = (dvol + rand_range(-volume_range,volume_range))
-	var newpitch = (dpitch + rand_range(-pitch_range,pitch_range))
+	var newvol = (dvol + randf_range(-volume_range,volume_range))
+	var newpitch = (dpitch + randf_range(-pitch_range,pitch_range))
 	sound.volume_db = newvol
 	sound.pitch_scale = newpitch

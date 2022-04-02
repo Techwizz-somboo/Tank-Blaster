@@ -7,11 +7,11 @@ var transition_beats
 var can_shuffle = true
 
 enum play_style {play_once, loop_one, shuffle, endless_shuffle, endless_loop}
-export(play_style) var play_mode
-export(bool) var autoplay = false
-export(NodePath) var autoplay_song
+@export var play_mode: play_style
+@export var autoplay: bool = false
+@export var autoplay_song: NodePath
 
-onready var songs = get_children()
+@onready var songs = get_children()
 
 const default_vol = 0
 
@@ -54,7 +54,7 @@ func _ready():
 	var root = Node.new()
 	root.name = "root"
 	add_child(root)
-	shuff.connect("timeout", self, "shuffle_songs")
+	shuff.connect(&"timeout", self.shuffle_songs)
 	for song in songs:
 		for i in song.get_children():
 			if i.cont == "core":
@@ -63,7 +63,7 @@ func _ready():
 					tween.name = 'Tween'
 					o.add_child(tween)
 	if autoplay:
-		if !playing:
+		if not playing:
 			quickplay(str(autoplay_song))
 	if AudioServer.get_bus_index("Music") == -1:
 		AudioServer.add_bus(AudioServer.bus_count)
@@ -127,12 +127,12 @@ func start_alone(song, layer):
 #play in isolation
 func _iplay(track):
 	var trk = track.duplicate()
-	get_node("root").add_child(trk)
+	get_node(^"root").add_child(trk)
 	var twe = Tween.new()
 	twe.name = "Tween"
 	trk.add_child(twe)
 	trk.play()
-	trk.connect("finished", self, "_track_finished", [trk])
+	trk.connect(&"finished", self._track_finished, [trk])
 	return trk
 
 #kills overlays when finished
@@ -141,10 +141,10 @@ func _track_finished(trk):
 
 #fade out overlays
 func _stop_overlays():
-	for i in get_node("root").get_children():
-		i.get_node("Tween").interpolate_property(i, "volume_db", i.volume_db, -60, transition_beats, Tween.TRANS_LINEAR, Tween.EASE_IN)
-		i.get_node("Tween").start()
-		i.get_node("Tween").connect("tween_completed", self, "_overlay_faded", [i])
+	for i in get_node(^"root").get_children():
+		i.get_node(^"Tween").interpolate_property(i, "volume_db", i.volume_db, -60, transition_beats, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		i.get_node(^"Tween").start()
+		i.get_node(^"Tween").connect(&"tween_completed", self._overlay_faded, [i])
 
 #delete overlay on fade
 func _overlay_faded(object, key, overlay):
@@ -185,7 +185,7 @@ func play(song):
 				if first:
 					ref_track = newtrk
 					first = false
-	if !playing:
+	if not playing:
 		last_beat = 1
 		emit_signal("bar", bar)
 		_beat()
@@ -197,7 +197,7 @@ func _play_overlays(song):
 		if i.cont == "ran":
 			randomize()
 			var rantrk = _get_rantrk(i)
-			if rand_range(0,1) <= i.random_chance:
+			if randf_range(0,1) <= i.random_chance:
 				_iplay(rantrk)
 		if i.cont == "seq":
 			var seqtrk = repeats
@@ -230,12 +230,12 @@ func _play_overlays(song):
 func _play_concat(concat):
 	var rantrk = _get_rantrk(concat)
 	rantrk.play()
-	rantrk.connect("finished", self, "concat_fin", [concat])
+	rantrk.connect(&"finished", self.concat_fin, [concat])
 
 func _concat_fin(concat):
 	for i in concat.get_children():
 		if i.is_connected("finished", self, "concat_fin") :
-			i.disconnect("finished", self, "concat_fin")
+			i.disconnect(&"finished", self.concat_fin)
 	_play_concat(concat)
 
 #mute all layers above specified layer, and fade in all below
@@ -312,7 +312,7 @@ func fade_in(song, layer):
 	layer = _trackname_to_int(song, layer)
 	songs[song]._get_core().get_child(layer).volume_db = default_vol
 	var target = playing_tracks[layer]
-	var tween = target.get_node("Tween")
+	var tween = target.get_node(^"Tween")
 	var in_from = target.get_volume_db()
 	tween.interpolate_property(target, 'volume_db', in_from, default_vol, transition_beats, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()
@@ -326,7 +326,7 @@ func fade_out(song, layer):
 	layer = _trackname_to_int(song, layer)
 	songs[song]._get_core().get_child(layer).volume_db = -65.0
 	var target = playing_tracks[layer]
-	var tween = target.get_node("Tween")
+	var tween = target.get_node(^"Tween")
 	var in_from = target.get_volume_db()
 	tween.interpolate_property(target, 'volume_db', in_from, -65.0, transition_beats, Tween.TRANS_SINE, Tween.EASE_OUT)
 	tween.start()
@@ -423,7 +423,7 @@ func _core_finished():
 					repeats += 1
 					play(current_song_num)
 				2:
-					$shuffle_timer.start(rand_range(2,4))
+					$shuffle_timer.start(randf_range(2,4))
 				3:
 					shuffle_songs()
 				4:
@@ -451,7 +451,7 @@ func _bar():
 				_change_song(new_song)
 			else:
 				play(new_song)
-		yield(get_tree().create_timer(0.5), "timeout")
+		await get_tree().create_timer(0.5).timeout
 		can_bar = true
 	
 #called every beat
